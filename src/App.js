@@ -1,11 +1,19 @@
-import React from "react";
-import Setup from "./tutorial/6-useReducer/setup";
-
+import React, { useState } from "react";
+import data from "./data";
+import List from "./List";
 function App() {
+  const [people, setPeople] = useState(data);
+
   return (
-    <div className="container">
-      <Setup />
-    </div>
+    <main>
+      <section className="container">
+        <h3>{people.length} дней рождения сегодня</h3>
+        <List people={people} />
+        <button className="btn" onClick={() => setPeople([])}>
+          Стереть
+        </button>
+      </section>
+    </main>
   );
 }
 

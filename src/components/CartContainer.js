@@ -8,7 +8,7 @@ const CartContainer = ({ cart = [], total, amount }) => {
 
   React.useEffect(() => {
     dispatch(getTotalCartAction(total, amount));
-  }, [cart]);
+  }, [cart, dispatch, amount, total]);
 
   if (cart.length === 0) {
     return (
